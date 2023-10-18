@@ -21,15 +21,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16 # Updated to the latest LTS version as of my last training cut-off
+          node-version: 16
+
+      - name: List directory contents
+        run: ls -la
 
       - name: Package install
-        run: npm install --legacy-peer-deps # Modified to handle peer dependencies if any
+        run: npm install --legacy-peer-deps
+        working-directory: text-parsing-app
 
       - name: App build
-        run: |
-          cd text-parsing-app
-          npm run build  # Fixed typo from mpm to npm
+        run: npm run build
+        working-directory: text-parsing-app
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -41,4 +44,4 @@ jobs:
       - name: Deploy to S3 bucket
         env:
           S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME }}
-        run: aws s3 sync text-parsing-app/build s3://$S3_BUCKET_NAME/ --delete # Updated the build directory path
+        run: aws s3 sync text-parsing-app/build s3://$S3_BUCKET_NAME/ --delete
