@@ -24,12 +24,12 @@ jobs:
           node-version: 18
 
       - name: Package install
-        run: yarn install --frozen-lockfile --production=true
+        run: npm install --frozen-lockfile --production=true
 
       - name: App build
         run: |
           cd text-parsing-app
-          yarn build
+          mpm run build
 
 
       - name: Configure AWS credentials
