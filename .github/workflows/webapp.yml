@@ -27,7 +27,7 @@ jobs:
         run: yarn install --frozen-lockfile --production=true
 
       - name: App build
-        run: NODE_ENV=production yarn build
+        run: yarn build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
