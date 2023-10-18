@@ -3,12 +3,11 @@ name: ML App CI
 on:
   push:
     paths:
-      - 'src/**'
-      - 'public/**'
+      - 'text-parsing-app/**'
   pull_request:
-    paths:
-      - 'src/**'
-      - 'public/**'
+    paths:      
+      - 'text-parsing-app/**'
+
   workflow_dispatch:
 
 jobs:
