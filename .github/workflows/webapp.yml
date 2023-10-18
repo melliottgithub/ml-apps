@@ -49,4 +49,4 @@ jobs:
       - name: Deploy to S3 bucket
         env:
           S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME }}
-        run: aws s3 sync text-parsing-app/build s3://$S3_BUCKET_NAME/ --delete
+        run: aws s3 sync text-parsing-app/dist s3://$S3_BUCKET_NAME/ --delete
