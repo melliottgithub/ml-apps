@@ -3,9 +3,11 @@ import "./App.css";
 function App() {
   return (
     <div className="container">
-      <h1>Hello World</h1>
+      <h1>Text Parsing</h1>
       <form>
-        <input />
+        <label>Enter String(Text):</label>
+        <textarea placeholder="Example: This is my text." />
+        <button>Process</button>
       </form>
     </div>
   );
