@@ -5,7 +5,6 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
 nltk.download('stopwords')
-
 ps = PorterStemmer()
 
 def lambda_handler(event, context):
