@@ -26,11 +26,17 @@ def lambda_handler(event, context):
         parsed_text = parse(ps, params)
         response = {'parsed_text': parsed_text}
         return {
+            'headers': {
+                'Access-Control-Allow-Origin': '*'
+                },
             'statusCode': 200,
             'body': json.dumps(response)
         }
     except Exception as ex:
         return {
+            'headers': {
+                'Access-Control-Allow-Origin': '*'
+                },
             'statusCode': 500,
             'body': f'Internal error: {str(ex)}'
         }
